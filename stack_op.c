@@ -2,8 +2,8 @@
 
 /**
  * mul_nod - Adds the top two elements of the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * @stack: the pointer to top the node
+ * @line_number: the integer
  */
 void mul_nod(stack_t **stack, unsigned int line_number)
 {
@@ -22,8 +22,8 @@ void mul_nod(stack_t **stack, unsigned int line_number)
 
 /**
  * mod_nod - Adds the top two elements of the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * @stack: the pointer to top the node
+ * @line_number: the integer
  */
 void mod_nod(stack_t **stack, unsigned int line_number)
 {

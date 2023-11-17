@@ -7,14 +7,14 @@
  */
 void mul_nod(stack_t **stack, unsigned int line_number)
 {
-	int sum;
+	int tot;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		more_er(8, line_number, "mul");
 
 	(*stack) = (*stack)->next;
-	sum = (*stack)->n * (*stack)->prev->n;
-	(*stack)->n = sum;
+	tot = (*stack)->n * (*stack)->prev->n;
+	(*stack)->n = tot;
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
@@ -27,7 +27,7 @@ void mul_nod(stack_t **stack, unsigned int line_number)
  */
 void mod_nod(stack_t **stack, unsigned int line_number)
 {
-	int sum;
+	int tot;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 
@@ -37,8 +37,8 @@ void mod_nod(stack_t **stack, unsigned int line_number)
 	if ((*stack)->n == 0)
 		more_er(9, line_number);
 	(*stack) = (*stack)->next;
-	sum = (*stack)->n % (*stack)->prev->n;
-	(*stack)->n = sum;
+	tot = (*stack)->n % (*stack)->prev->n;
+	(*stack)->n = tot;
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }

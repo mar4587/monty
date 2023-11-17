@@ -2,12 +2,13 @@
 #define MONTY_H
 
 #define _GNU_SOURCE
-#include <stdio.h>
+
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -42,14 +43,12 @@ typedef struct instruction_s
 extern stack_t *head;
 typedef void (*op_func)(stack_t **, unsigned int);
 
-/*file operations*/
 void file_op(char *file_name);
 int _linpars(char *buffer, int line_number, int format);
 void read_file(FILE *);
 int len_chars(FILE *);
 void find_func(char *, char *, int, int);
 
-/*Stack operations*/
 stack_t *create_node(int n);
 void free_nod(void);
 void print_stk(stack_t **, unsigned int);
@@ -63,19 +62,14 @@ void pop_top(stack_t **, unsigned int);
 void nop(stack_t **, unsigned int);
 void swap_nod(stack_t **, unsigned int);
 
-/*Math operations with nodes*/
+void mul_nod(stack_t **, unsigned int);
+void mod_nod(stack_t **, unsigned int);
 void add_nod(stack_t **, unsigned int);
 void sub_nod(stack_t **, unsigned int);
 void div_nod(stack_t **, unsigned int);
-void mul_nod(stack_t **, unsigned int);
-void mod_nod(stack_t **, unsigned int);
-
-/*String operations*/
 void print_char(stack_t **, unsigned int);
 void print_str(stack_t **, unsigned int);
 void rotl(stack_t **, unsigned int);
-
-/*Error hanlding*/
 void err(int error_code, ...);
 void more_er(int error_code, ...);
 void string_er(int error_code, ...);
